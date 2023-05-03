@@ -1,16 +1,26 @@
-# This is a sample Python script.
+class Account:
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.balance = balance
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    def deposit(self, dep_amt):
+        self.balance += dep_amt
+        print(f"Added {dep_amt} to the balance")
+
+    def withdrawal(self, wd_amt):
+        if self.balance >= wd_amt:
+            self.balance -= wd_amt
+            print("Withdrawal accepted")
+        else:
+            print("Sorry not enough funds!")
+
+    def __str__(self):
+        return f"Owner: {self.owner} \nBalance: {self.balance}"
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    a = Account("Sam", 500)
+    a.deposit(100)
+    a.withdrawal(300)
+    a.withdrawal(100)
+    print(a)
