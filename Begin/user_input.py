@@ -33,6 +33,7 @@ def gameon_choice():
 
 if __name__ == '__main__':
     game_on = True
+    a = 1 + 2
     game_list = [0, 1, 2]
     while game_on:
         display_game(game_list)

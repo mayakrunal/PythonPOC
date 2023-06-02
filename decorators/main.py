@@ -1,3 +1,4 @@
+
 def new_decorator(original_func):
     def wrap_fun():
         print('Some extra code, before the original function')
